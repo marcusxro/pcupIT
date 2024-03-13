@@ -1,0 +1,289 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.homepageCon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  padding: 10px;
+}
+.homepageCon table {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.homepageCon table thead {
+background-color: #2E86AB;
+}
+
+.homepageCon table thead tr th {
+  padding: 10px;
+  color: white;
+}
+.searchBar {
+  height: 30px;
+}
+.searchBar > input{
+  height: 30px;
+  padding: 10px;
+}
+.tableCon {
+  margin: 10px;
+  height: 80%;
+  margin-top: 10px;
+  overflow-y: scroll;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 90%;
+  transition: height 0.3s ease-in-out;
+  margin-bottom: 10px;
+}.tableCon::-webkit-scrollbar {
+  display: none;
+}
+.homepageCon .bottomNav button {
+  all: unset;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  background-color: #2E86AB;
+  margin-top: 20px;
+}
+.upperContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding-inline: 10px;
+}
+.searchBar {
+  width: 30%;
+  height: 50px;
+}
+.searchBar .search {
+  height: 100%;
+  border-radius: 10px;
+}
+.upperContent  input {
+  height: 20px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border: 2px solid #2E86AB;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.btnCon button{
+  background-color: #2E86AB;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  margin: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="date"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+.addDataContent {
+  margin: 10px;
+  padding: 10px;  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.addDataContent table th, .tableCon table th {
+  background-color: #2E86AB;
+}
+/* Responsive design */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr { border: 1px solid #ccc; }
+  
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+  }
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+
+.actions button, .Send, .confirmCon button {
+  padding: 6px 10px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.SendCon, .confirmCon {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 10px;
+}
+
+.actions button:last-child {
+  margin-right: 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .actions button {
+    display: block;
+    margin: 5px auto;
+  }
+}
+
+.isEdit {
+  border: none;
+  outline: none;
+  outline: green;
+}
+
+.confirm {
+  background-color: green;
+}
+
+
+.desc {
+  width: 100%;
+  max-width: 300px;
+}
+.dataBody tr td {
+  border: 1px solid  #ccc;
+}
+
+h1 span {
+  background-color: #007bff;
+  height: 20px;
+  width: 20px;
+  color: white;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.nav{
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #007bff;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.showData {
+  padding: 10px;
+  height: 100vh;
+}
+
+
+.showDataItem {
+  width: 100%;
+  height: 100%;
+}
+
+/* Set table layout to fixed */
+.showDataItem table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Style the table header */
+.showDataItem table thead tr th {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 10px;
+}
+
+/* Style table rows and cells */
+.showDataItem table tbody tr td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.showDataItem .desc {
+  width: 100%;
+  max-width: 200px;
+  text-align: left;
+  white-space: normal;
+}
+
+
+/* Apply styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  .showDataItem table {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Apply styles for even smaller screens */
+@media only screen and (max-width: 480px) {
+  .showDataItem table {
+    font-size: 10px; /* Further reduce font size */
+  }
+}
