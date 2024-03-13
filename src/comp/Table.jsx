@@ -37,7 +37,7 @@ const Table = (query) => {
         setEndUser(item.EndUser)
     }
     useEffect(() => {
-        axios.get('http://localhost:8080/GetData')
+        axios.get('https://pcupitserver.onrender.com/GetData')
             .then((res) => {
                 setData(res.data)
                 setLoading(true)
@@ -57,7 +57,7 @@ const Table = (query) => {
 
 
     const deleteItemFromDb = (item) => {
-        axios.delete(`http://localhost:8080/item/${item}`)
+        axios.delete(`https://pcupitserver.onrender.com/item/${item}`)
             .then((res) => {
                 console.log("deleted")
             }).catch((err) => {
@@ -66,7 +66,7 @@ const Table = (query) => {
     }
 
     const editItem = (item) => {
-        axios.put(`http://localhost:8080/edit/${item}`, {
+        axios.put(`https://pcupitserver.onrender.com/edit/${item}`, {
             RecFrom: Rec,
             InvenTag: IntTag,
             Quantity: Quan,

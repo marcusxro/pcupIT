@@ -13,7 +13,7 @@ const AddData = () => {
     const sendData = () => {
         const currentDate = new Date();
         const formattedDate = currentDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
-        axios.post('http://localhost:8080/sendData', {
+        axios.post('https://pcupitserver.onrender.com/sendData', {
             RecFrom: Rec,
             Department: Depart,
             InvenTag: IntTag,

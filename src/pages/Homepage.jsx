@@ -13,7 +13,7 @@ const Homepage = () => {
     const [query, setQuery] = useState('')
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:8080/GetData')
+        axios.get('https://pcupitserver.onrender.com/GetData')
             .then((res) => {
                 setData(res.data)
             }).catch((err) => {

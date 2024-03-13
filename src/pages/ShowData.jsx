@@ -7,7 +7,7 @@ const ShowData = () => {
     const [filteredData, setFilteredData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8080/GetData')
+        axios.get('https://pcupitserver.onrender.com/GetData')
             .then((res) => {
                 const filtered = res.data.filter((item) => dataFromArray.includes(item._id))
                 setFilteredData(filtered)
