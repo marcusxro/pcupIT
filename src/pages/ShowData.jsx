@@ -19,6 +19,7 @@ const ShowData = () => {
 
     return (
         <div className='showData'>
+            {dataFromArray.length === 0 ? "No data" : ""}
             {filteredData.map((item) => (
                 <div className="showDataItem" key={item._id}>
                     <table>

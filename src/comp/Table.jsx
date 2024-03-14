@@ -106,8 +106,8 @@ const Table = (query) => {
                         <th>Quantity</th>
                         <th>Unit</th>
                         <th>Amount</th>
-                        <th>Actual End User</th>
                         <th>Date</th>
+                        <th>Actual End User</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
