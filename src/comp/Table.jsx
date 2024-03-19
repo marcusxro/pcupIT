@@ -70,6 +70,7 @@ const Table = (query) => {
             RecFrom: Rec,
             InvenTag: IntTag,
             Quantity: Quan,
+            Department: Depart,
             Desc: Desc,
             Unit: Unit,
             Amount: Amount,
@@ -110,7 +111,7 @@ const Table = (query) => {
                 </thead>
                 <tbody className='dataBody'>
                     {loading === true ? (
-                        finalizedData.map((item) => (
+                        finalizedData.slice().reverse().map((item) => (
                             <tr key={item._id}>
                                 <td data-label="Received From">
                                     {isEdit === item._id ? <input className='isEdit' type='text' value={Rec} onChange={(e) => { setRec(e.target.value) }} /> : <div> {item.RecFrom} </div>}
