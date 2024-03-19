@@ -81,17 +81,14 @@ const Table = (query) => {
         })
     }
     const handleRemoveFromPrint = (itemId) => {
-        // Dispatch action to remove itemId from Redux state
         dispatch(DecArray(itemId));
-    
-        // Update local state to remove itemId from printIds
         setPrintIds(prevIds => prevIds.filter(id => id !== itemId));
     };
     
 
     const handleAddToPrint = (itemId) => {
-        dispatch(AddArray([itemId])); // Wrap itemId in an array before passing it to AddArray action
-        setPrintIds(prevIds => [...new Set([...prevIds, itemId])]); // Ensure uniqueness of itemId in printIds array
+        dispatch(AddArray([itemId])); 
+        setPrintIds(prevIds => [...new Set([...prevIds, itemId])]); 
     };
 
     return (
