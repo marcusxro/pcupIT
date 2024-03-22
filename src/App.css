@@ -3,7 +3,7 @@
   margin: 0px;
 }
 
-.homepageCon{
+.homepageCon {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,26 +11,32 @@
   height: 100vh;
   padding: 10px;
 }
+
 .homepageCon table {
   width: 100%;
   height: auto;
   padding: 10px;
 }
+
 .homepageCon table thead {
-background-color: #2E86AB;
+  background-color: #2E86AB;
 }
 
 .homepageCon table thead tr th {
   padding: 10px;
   color: white;
+
 }
+
 .searchBar {
   height: 30px;
 }
-.searchBar > input{
+
+.searchBar>input {
   height: 30px;
   padding: 10px;
 }
+
 .tableCon {
   margin: 10px;
   height: 80%;
@@ -42,9 +48,12 @@ background-color: #2E86AB;
   width: 90%;
   transition: height 0.3s ease-in-out;
   margin-bottom: 10px;
-}.tableCon::-webkit-scrollbar {
+}
+
+.tableCon::-webkit-scrollbar {
   display: none;
 }
+
 .homepageCon .bottomNav button {
   all: unset;
   width: 150px;
@@ -55,22 +64,26 @@ background-color: #2E86AB;
   background-color: #2E86AB;
   margin-top: 20px;
 }
-.upperContent{
+
+.upperContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   padding-inline: 10px;
 }
+
 .searchBar {
   width: 30%;
   height: 50px;
 }
+
 .searchBar .search {
   height: 100%;
   border-radius: 10px;
 }
-.upperContent  input {
+
+.upperContent input {
   height: 20px;
   border: none;
   outline: none;
@@ -80,7 +93,7 @@ background-color: #2E86AB;
   width: 100%;
 }
 
-.btnCon button{
+.btnCon button {
   background-color: #2E86AB;
   border: none;
   outline: none;
@@ -97,10 +110,12 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 th {
@@ -116,39 +131,53 @@ input[type="number"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 input[type="date"] {
   padding: 10px;
   border-radius: 10px;
   border: none;
 }
+
 .addDataContent {
   margin: 10px;
-  padding: 10px;  border: 1px solid #ccc;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 10px;
 }
-.addDataContent table th, .tableCon table th {
+
+.addDataContent table th,
+.tableCon table th {
   background-color: #2E86AB;
 }
+
 /* Responsive design */
 @media (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
     display: block;
   }
-  
+
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
-  
-  tr { border: 1px solid #ccc; }
-  
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
   td {
     border: none;
     position: relative;
     padding-left: 50%;
   }
-  
+
   td:before {
     position: absolute;
     top: 6px;
@@ -165,7 +194,9 @@ input[type="date"] {
 }
 
 
-.actions button, .Send, .confirmCon button {
+.actions button,
+.Send,
+.confirmCon button {
   padding: 6px 10px;
   margin-right: 5px;
   background-color: #007bff;
@@ -175,11 +206,12 @@ input[type="date"] {
   cursor: pointer;
 }
 
-.SendCon, .confirmCon {
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 10px;
+.SendCon,
+.confirmCon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .actions button:last-child {
@@ -209,8 +241,9 @@ margin-top: 10px;
   width: 100%;
   max-width: 300px;
 }
+
 .dataBody tr td {
-  border: 1px solid  #ccc;
+  border: 1px solid #ccc;
 }
 
 h1 span {
@@ -223,16 +256,6 @@ h1 span {
   padding: 10px;
 }
 
-.nav{
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #007bff;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
 
 .showData {
   padding: 10px;
@@ -245,7 +268,6 @@ h1 span {
   height: 100%;
 }
 
-/* Set table layout to fixed */
 .showDataItem table {
   table-layout: fixed;
   width: 100%;
@@ -262,7 +284,6 @@ h1 span {
 
 /* Style table rows and cells */
 .showDataItem table tbody tr td {
-  border: 1px solid #ddd;
   padding: 8px;
 }
 
@@ -277,13 +298,199 @@ h1 span {
 /* Apply styles for smaller screens */
 @media only screen and (max-width: 768px) {
   .showDataItem table {
-    font-size: 12px; /* Adjust font size for smaller screens */
+    font-size: 12px;
+    /* Adjust font size for smaller screens */
   }
 }
 
 /* Apply styles for even smaller screens */
 @media only screen and (max-width: 480px) {
   .showDataItem table {
-    font-size: 10px; /* Further reduce font size */
+    font-size: 10px;
+    /* Further reduce font size */
   }
+}
+
+
+.dataBody td {
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.logOut,
+.nav {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #007bff;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  align-self: flex-end;
+}
+
+.upperNav {
+  display: flex;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 1270px) {
+  .upperNav {
+    flex-direction: column;
+  }
+}
+
+.SignInCon {
+  display: flex;
+  background-color: #2E86AB;
+  align-items: center;
+  justify-content: center;
+  height: 100vh !important;
+  width: 100vw;
+}
+
+.signIn {
+  display: flex;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 300px;
+  background-color: white;
+  color: black;
+  flex-direction: column;
+  box-shadow: 0px -1px 13px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px -1px 13px 0px rgba(0, 0, 0, 0.75);
+  gap: 10px;
+  -moz-box-shadow: 0px -1px 13px 0px rgba(0, 0, 0, 0.75);
+}
+
+.signInText {
+  width: 100%;
+  text-align: left;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: bold;
+  color: black;
+}
+.forgotText {
+  width: 100%;
+  text-align: left;
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: bold;
+  color: black;
+}
+.signIn input {
+  height: 50px;
+  padding-inline: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}.signIn input:focus {
+
+  border: 1px solid #007bff;
+  outline: none;
+}
+
+.showPass {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.signIn button {
+  all: unset;
+  background-color: #007bff;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  font-weight: bold;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 20px;
+}
+
+.first {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap:3px;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.second {
+  width: 100%;
+  text-align: right;
+}
+
+.second span {
+  text-decoration: underline;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgotPassCon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh !important;
+  width: 100vw;
+  background-color: #2E86AB;
+}
+.forgotPass {
+display: flex;
+flex-direction: column;
+padding: 20px;
+width: 400px;
+margin: 10px;
+height: 200px;
+border-radius: 20px;
+box-shadow: 0px -1px 13px 0px rgba(0, 0, 0, 0.75);
+-webkit-box-shadow: 0px -1px 13px 0px rgba(0, 0, 0, 0.75);
+gap: 10px;
+-moz-box-shadow: 0px -1px 13px 0px rgba(0, 0, 0, 0.75);
+background-color: white;
+justify-content: center;
+}
+
+
+.forgotPass input {
+  height: 50px;
+  padding-inline: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.forgotPass input:focus {
+  border: 1px solid #007bff;
+  outline: none;
+}
+.forgotPass button {
+  background-color: #007bff;
+  height: 50px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  width: 200px;
+  border-radius: 20px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgotPass .text span{
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
 }

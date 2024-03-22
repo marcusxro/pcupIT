@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
+import { Auth } from '../Auth'
+
 
 const ShowData = () => {
     const dataFromArray = useSelector((state) => state.arrayReducer.value)
@@ -16,6 +20,18 @@ const ShowData = () => {
             })
     }, [filteredData])
 
+    const nav = useNavigate()
+
+    useEffect(() => {
+        const unsub = onAuthStateChanged(Auth, (acc) => {
+            if (!acc) {
+                nav("/")
+            } else {
+                nav('/toPrint')
+            }
+        })
+        return () => { unsub() }
+    }, [])
 
     return (
         <div className='showData'>
