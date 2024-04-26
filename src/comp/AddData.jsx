@@ -9,6 +9,7 @@ const AddData = () => {
     const [Depart, setDepart] = useState('')
     const [Amount, setAmount] = useState(0)
     const [EndUser, setEndUser] = useState('')
+    const [StatusItem, setStats] = useState('')
 
     const sendData = () => {
         const currentDate = new Date();
@@ -20,6 +21,7 @@ const AddData = () => {
             Quantity: Quan,
             Desc: Desc,
             Unit: Unit,
+            Status: StatusItem,
             Amount: Amount,
             EndUser: EndUser,
             Date: formattedDate
@@ -33,6 +35,7 @@ const AddData = () => {
             setUnit('')
             setAmount('')
             setEndUser('')
+            setStats('')
         }).catch((err) => {
             console.log(err)
         })
@@ -48,6 +51,7 @@ const AddData = () => {
                             <th>Department</th>
                             <th>Inventory Tag No.</th>
                             <th>Description</th>
+                            <th>Status</th>
                             <th>Quantity</th>
                             <th>Unit</th>
                             <th>Amount</th>
@@ -68,6 +72,14 @@ const AddData = () => {
                             </td>
                             <td data-label="Description">
                                 <input type="text" placeholder="Enter Description" value={Desc} onChange={(e) => { setDesc(e.target.value) }} />
+                            </td>
+                            <td data-label="Status">
+                                <select name="Status" onChange={(e) => {setStats(e.target.value)}}>
+                                    <option value="">Choose Status</option>
+                                    <option value="Defective">Defective</option>
+                                    <option value="Working">Working</option>
+                                    <option value="Disposal">Disposal</option>
+                                </select>
                             </td>
                             <td data-label="Quantity">
                                 <input type="number" placeholder="Enter Quantity" value={Quan} onChange={(e) => { setQuan(e.target.value) }} />

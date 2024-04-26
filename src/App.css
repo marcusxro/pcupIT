@@ -494,3 +494,26 @@ justify-content: center;
   text-decoration: underline;
   font-weight: bold;
 }
+
+.WorkingStatus {
+  color: green;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+
+.DisposalStatus {
+  color: orange;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+
+.DefectiveStatus {
+  color: red;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+
+.recFromName {
+  font-weight: bold;
+  text-wrap: nowrap;
+}

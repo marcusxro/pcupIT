@@ -31,6 +31,7 @@ const SignIn = () => {
         }
         else if (password.length <= 5) {
             alert("Password should be at least 6 characters long");
+            console.log(password.length && email.length?email:password)
             return;
         }
         else {

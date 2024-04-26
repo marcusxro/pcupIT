@@ -19,9 +19,7 @@ const ShowData = () => {
                 console.log(err)
             })
     }, [filteredData])
-
     const nav = useNavigate()
-
     useEffect(() => {
         const unsub = onAuthStateChanged(Auth, (acc) => {
             if (!acc) {
@@ -32,7 +30,6 @@ const ShowData = () => {
         })
         return () => { unsub() }
     }, [])
-
     return (
         <div className='showData'>
             {dataFromArray.length === 0 ? "No data" : ""}
@@ -45,6 +42,7 @@ const ShowData = () => {
                                 <th>Department</th>
                                 <th>Inventory Tag No.</th>
                                 <th>Description</th>
+                                <th>Status</th>
                                 <th>Quantity</th>
                                 <th>Unit</th>
                                 <th>Amount</th>
@@ -66,6 +64,9 @@ const ShowData = () => {
                                     </td>
                                     <td className='desc' data-label="Description">
                                         <div className='desc'> {item.Desc} </div>
+                                    </td>
+                                    <td className='desc' data-label="Status">
+                                        <div className='desc'> {item.Status} </div>
                                     </td>
                                     <td data-label="Quantity">
                                         <div> {item.Quantity} </div>

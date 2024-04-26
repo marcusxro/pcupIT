@@ -19,6 +19,7 @@ const Table = (query) => {
 
     const [printIds, setPrintIds] = useState([]);
     const [loading, setLoading] = useState(false)
+    const [StatusItem, setStats] = useState("")
 
     const arrayData = useSelector((item) => item.arrayReducer.value)
     useEffect(() => {
@@ -32,6 +33,7 @@ const Table = (query) => {
         setQuan(item.Quantity)
         setDesc(item.Desc)
         setUnit(item.Unit)
+        setStats(item.Status)
         setDepart(item.Department)
         setAmount(item.Amount)
         setEndUser(item.EndUser)
@@ -71,6 +73,7 @@ const Table = (query) => {
             InvenTag: IntTag,
             Quantity: Quan,
             Department: Depart,
+            Status: StatusItem,
             Desc: Desc,
             Unit: Unit,
             Amount: Amount,
@@ -85,13 +88,23 @@ const Table = (query) => {
         dispatch(DecArray(itemId));
         setPrintIds(prevIds => prevIds.filter(id => id !== itemId));
     };
-    
+
 
     const handleAddToPrint = (itemId) => {
-        dispatch(AddArray([itemId])); 
-        setPrintIds(prevIds => [...new Set([...prevIds, itemId])]); 
+        dispatch(AddArray([itemId]));
+        setPrintIds(prevIds => [...new Set([...prevIds, itemId])]);
     };
 
+    const calculateStatus = (text) => {
+        switch (text) {
+            case "Working":
+                return "WorkingStatus"
+            case "Disposal":
+                return "DisposalStatus"
+            case "Defective":
+                return "DefectiveStatus"
+        }
+    }
     return (
         <div className='tableCon'>
             <table>
@@ -101,6 +114,7 @@ const Table = (query) => {
                         <th>Department</th>
                         <th>Inventory Tag No.</th>
                         <th>Description</th>
+                        <th>Status</th>
                         <th>Quantity</th>
                         <th>Unit</th>
                         <th>Amount</th>
@@ -113,7 +127,7 @@ const Table = (query) => {
                     {loading === true ? (
                         finalizedData.slice().reverse().map((item) => (
                             <tr key={item._id}>
-                                <td data-label="Received From">
+                                <td className='recFromName' data-label="Received From">
                                     {isEdit === item._id ? <input className='isEdit' type='text' value={Rec} onChange={(e) => { setRec(e.target.value) }} /> : <div> {item.RecFrom} </div>}
                                 </td>
                                 <td data-label="Department">
@@ -125,6 +139,17 @@ const Table = (query) => {
                                 <td data-label="Description">
                                     {isEdit === item._id ? <input className='isEdit' type='text' value={Desc} onChange={(e) => { setDesc(e.target.value) }} /> : <div className='desc'> {item.Desc} </div>}
                                 </td>
+
+                                <td className={`${calculateStatus(item.Status)}`} data-label={`Status ${calculateStatus(item.Status)}`}>
+                                    {isEdit === item._id ?
+                                        <select name="Status" id="" value={StatusItem ? StatusItem : item.Status} onChange={(e) => { setStats(e.target.value) }} >
+                                            <option value="">Select Status</option>
+                                            <option value="Defective">Defective</option>
+                                            <option value="Working">Working</option>
+                                            <option value="Disposal">Disposal</option>
+                                        </select> : <div className='desc'> {item.Status ? item.Status : "No Status"} </div>}
+                                </td>
+
                                 <td data-label="Quantity">
                                     {isEdit === item._id ? <input className='isEdit' type='number' value={Quan} onChange={(e) => { setQuan(e.target.value) }} /> : <div> {item.Quantity} </div>}
                                 </td>
@@ -149,7 +174,7 @@ const Table = (query) => {
                                         <button onClick={() => { setDelete(null) }}>Cancel</button>
                                     </div>
                                 ) :
-    
+
                                     (
                                         <td className='actions'>
                                             <button onClick={() => { setIsEdit(item._id); setEdit(item) }}>Edit</button>
@@ -159,12 +184,12 @@ const Table = (query) => {
                                             ) : (
                                                 <button onClick={() => { handleAddToPrint(item._id) }}>Add</button>
                                             )}
-    
-    
+
+
                                         </td>
                                     )}
-    
-    
+
+
                             </tr>
                         ))
                     ) : (<>Loading... please wait</>)}

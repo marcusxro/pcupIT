@@ -10,7 +10,6 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState('');
 
     const resetPassword = () => {
-
         if(email.length === 0) {
             alert("Please type something")
             return
@@ -19,7 +18,6 @@ const ForgotPassword = () => {
             .then(() => {
                 setEmail('')
                 alert("Verification sent!")
-                console.log("DONE!")
             })
             .catch((error) => {
                 if (error.code === 'auth/user-not-found') {
@@ -30,6 +28,7 @@ const ForgotPassword = () => {
                 }
             });
     };
+    
   return (
     <div className='forgotPassCon'>
         <div className="forgotPass">
